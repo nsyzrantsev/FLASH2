@@ -17,15 +17,15 @@ struct output_stream;
  * combiner thread.
  */
 #if defined(__GNUC__) && defined(__SSE2__)
-#  define BASE_READS_PER_READ_SET 30
-#  define PERTHREAD_READS_PER_READ_SET 5
+#  define BASE_READS_PER_READ_SET 1000
+#  define PERTHREAD_READS_PER_READ_SET 200
 #else
-#  define BASE_READS_PER_READ_SET 24
-#  define PERTHREAD_READS_PER_READ_SET 4
+#  define BASE_READS_PER_READ_SET 1000
+#  define PERTHREAD_READS_PER_READ_SET 200
 #endif
 
 /* NUmber of read sets to allocate per combiner thread.  Must be at least 6.  */
-#define QUEUE_SIZE_PER_THREAD 8
+#define QUEUE_SIZE_PER_THREAD 1000
 
 struct read_io_handle;
 
